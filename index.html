@@ -3,23 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Meu portfólio</title>
     <style>
+      :root {
+        --cor-principal: #6e859f;
+        --cor-secundaria: #284260;
+        --cor-destaque: #c92bfc;
+      }
+
       body {
         background: #f8f9fa;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Chakra Petch', sans-serif;
       }
 
-      header {
-        background: linear-gradient(135deg, #e0f7fa, #fff);
-        border-radius: 20px;
-      }
-
-      h1, h2, h3 {
+      h1 {
+        font-size: 2.5rem;
         font-weight: 700;
+        color: var(--cor-secundaria);
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 600;
+        color: var(--cor-secundaria);
+      }
+
+      h3, h5 {
+        font-weight: 700;
+        color: var(--cor-secundaria);
+      }
+
+      p {
+        color: var(--cor-principal);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
       }
 
       ul.list-group li {
@@ -45,10 +68,29 @@
       a:hover {
         text-decoration: underline;
       }
+
+      footer {
+        background-color: #1c1c1c;
+        color: white;
+        padding: 3rem 1rem;
+      }
+
+      footer a {
+        color: var(--cor-principal);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--cor-destaque);
+      }
+
+      footer p {
+        margin: 0.5rem 0;
+      }
     </style>
   </head>
   <body>
-
     <!-- Seção de Imagem e Introdução -->
     <header class="container text-center p-5 shadow">
       <img src="img/Arthur.jpg" alt="avatar do Arthur" class="img-fluid rounded-circle mb-4 shadow-sm" width="200"/>
@@ -60,57 +102,132 @@
     </header>
 
     <!-- Seção de Habilidades -->
-    <section class="container card-section">
+    <section class="container card-section text-center">
       <p class="lead mb-4">Minhas habilidades</p>
-      <ul class="list-group">
+      <ul class="list-group d-inline-block text-start">
         <li class="list-group-item">Autodidata em diversas áreas</li>
         <li class="list-group-item">Desenhista no tempo livre</li>
         <li class="list-group-item">Aprendendo programação</li>
       </ul>
-      <span class="badge bg-info mt-3">Bootstrap</span>
+      <div>
+        <span class="badge bg-info mt-3">Bootstrap</span>
+      </div>
     </section>
 
     <!-- Seção de Projetos com Cards -->
     <section class="container card-section">
-      <h3 class="mb-4">Meus Projetos</h3>
+      <h3 class="mb-4 text-center">Meus Projetos</h3>
       <div class="row">
         <!-- Projeto 1 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 1" />
+            <img src="img/Mona lisa.jpg" class="card-img-top" alt="Mona Lisa" />
             <div class="card-body">
-              <h5 class="card-title">Projeto 1</h5>
+              <h5 class="card-title">Mona Lisa</h5>
               <p class="card-text">Um experimento visual feito com P5.js.</p>
-              <a href="https://editor.p5js.org/Arthur5234/sketches/94dWqHgDy" target="_blank" class="btn btn-primary">Ver Projeto</a>
+              <a href="https://editor.p5js.org/Arthur5234/sketches/94dWqHgDy" target="_blank" class="btn btn-primary mb-2">Ver Projeto</a>
+              <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProjeto1">Ver mais</button>
             </div>
           </div>
         </div>
+
         <!-- Projeto 2 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 2" />
+            <img src="img/Quente ou Frio.jpg" class="card-img-top" alt="Quente ou Frio" />
             <div class="card-body">
-              <h5 class="card-title">Projeto 2</h5>
+              <h5 class="card-title">Quente ou Frio</h5>
               <p class="card-text">Um jogo interativo criado com código.</p>
-              <a href="https://editor.p5js.org/Arthur5234/sketches/36W5slG7U" target="_blank" class="btn btn-primary">Ver Projeto</a>
+              <a href="https://editor.p5js.org/Arthur5234/sketches/36W5slG7U" target="_blank" class="btn btn-primary mb-2">Ver Projeto</a>
+              <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProjeto2">Ver mais</button>
             </div>
           </div>
         </div>
+
         <!-- Projeto 3 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 3" />
+            <img src="img/Corrida.jpg" class="card-img-top" alt="Corrida" />
             <div class="card-body">
-              <h5 class="card-title">Projeto 3</h5>
+              <h5 class="card-title">Corrida</h5>
               <p class="card-text">Diversão rápida e garantida.</p>
-              <a href="https://editor.p5js.org/Arthur5234/sketches/ZC0Zw84Z8" target="_blank" class="btn btn-primary">Ver Projeto</a>
+              <a href="https://editor.p5js.org/Arthur5234/sketches/ZC0Zw84Z8" target="_blank" class="btn btn-primary mb-2">Ver Projeto</a>
+              <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProjeto3">Ver mais</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <!-- Modais -->
+    <!-- Modal Projeto 1 -->
+    <div class="modal fade" id="modalProjeto1" tabindex="-1" aria-labelledby="modalProjeto1Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalProjeto1Label">Mona Lisa - Detalhes</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img src="img/Mona lisa.jpg" class="img-fluid rounded mb-3" alt="Imagem detalhada do projeto Mona Lisa">
+            <p>Um projeto para testar uma ilusão de ótica de maneira simples e descontraida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Projeto 2 -->
+    <div class="modal fade" id="modalProjeto2" tabindex="-1" aria-labelledby="modalProjeto2Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalProjeto2Label">Quente ou Frio - Detalhes</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img src="img/Quente ou Frio.jpg" class="img-fluid rounded mb-3" alt="Imagem detalhada do projeto Quente ou Frio">
+            <p>Um jogo para passar o tempo e se divertir a qualquer momento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Projeto 3 -->
+    <div class="modal fade" id="modalProjeto3" tabindex="-1" aria-labelledby="modalProjeto3Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalProjeto3Label">Corrida - Detalhes</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img src="img/Corrida.jpg" class="img-fluid rounded mb-3" alt="Imagem detalhada do projeto Corrida">
+            <p>Um jogo de corrida para se divertir com mais de uma pessoa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container py-5 bg-dark text-light">
+      <h2 class="text-center">Entre em contato</h2>
+      <div class="text-center">
+        <p>arthurgabrielsilva8@gmail.com</p>
+        <a href="mailto:arthurgabrielsilva8@gmail.com">Enviar e-mail</a><br>
+        <a href="https://github.com/Arthur5234" target="_blank">GitHub</a>
+      </div>
+      <div class="text-center mt-4">
+        <p>Desenvolvido por Arthur Gabriel Da Silva Lucena.</p>
+      </div>
+      <div class="border-top pt-3 mt-4">
+        <p class="my-5 text-center">© Copyright 2025. Produzido por Arthur Gabriel Da Silva Lucena</p>
+      </div>
+    </footer>
+    
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-XN5UZbKPlprFyIY/4vfnWOlHLWWjvCm4l2s1eR5pxFDFH/zX0+MEIpQnPl4CSFaL" crossorigin="anonymous"></script>
+    
+
+    <!-- Bootstrap JS (Modal Funcionalidade) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
